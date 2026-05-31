@@ -138,6 +138,15 @@ button {
   position: relative;
 }
 
+.nav-item-dropdown::after {
+  content: "";
+  height: 18px;
+  left: -18px;
+  position: absolute;
+  right: -18px;
+  top: calc(100% - 4px);
+}
+
 .nav-dropdown-toggle {
   align-items: center;
   background: transparent;
@@ -172,7 +181,7 @@ button {
   padding: 8px;
   pointer-events: none;
   position: absolute;
-  top: calc(100% + 8px);
+  top: calc(100% + 6px);
   transform: translate(-50%, -8px);
   transition: opacity 180ms ease, transform 180ms ease;
   visibility: hidden;
@@ -1214,6 +1223,10 @@ h2 {
 
   .nav-item-dropdown {
     width: 100%;
+  }
+
+  .nav-item-dropdown::after {
+    display: none;
   }
 
   .nav-dropdown {

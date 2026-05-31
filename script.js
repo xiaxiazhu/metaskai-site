@@ -87,6 +87,7 @@ tabs.forEach((tab) => {
 const toggle = document.querySelector(".menu-toggle");
 const nav = document.querySelector(".site-nav");
 const dropdownItems = document.querySelectorAll(".nav-item-dropdown");
+const desktopNav = window.matchMedia("(min-width: 961px)");
 
 function closeDropdowns(except) {
   dropdownItems.forEach((item) => {
@@ -115,6 +116,28 @@ nav.querySelectorAll("a").forEach((link) => {
 
 dropdownItems.forEach((item) => {
   const dropdownToggle = item.querySelector(".nav-dropdown-toggle");
+  let closeTimer;
+
+  item.addEventListener("mouseenter", () => {
+    if (!desktopNav.matches) {
+      return;
+    }
+    window.clearTimeout(closeTimer);
+    closeDropdowns(item);
+    item.classList.add("open");
+    dropdownToggle.setAttribute("aria-expanded", "true");
+  });
+
+  item.addEventListener("mouseleave", () => {
+    if (!desktopNav.matches) {
+      return;
+    }
+    closeTimer = window.setTimeout(() => {
+      item.classList.remove("open");
+      dropdownToggle.setAttribute("aria-expanded", "false");
+    }, 260);
+  });
+
   dropdownToggle.addEventListener("click", () => {
     const open = !item.classList.contains("open");
     closeDropdowns(item);
