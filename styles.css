@@ -295,7 +295,8 @@ h2 em {
 .system-halo,
 .orbit,
 .system-core,
-.system-node {
+.signal-dot,
+.brand-chip {
   position: absolute;
 }
 
@@ -367,52 +368,37 @@ h2 em {
   width: 100%;
 }
 
-.system-node {
-  align-items: center;
+.signal-dot {
+  background: var(--green);
+  border: 5px solid rgba(255, 254, 251, 0.75);
+  border-radius: 50%;
+  box-shadow: 0 8px 20px rgba(21, 35, 31, 0.14);
+  height: 22px;
+  width: 22px;
+}
+
+.dot-one { left: 22%; top: 19%; }
+.dot-two { right: 15%; top: 36%; }
+.dot-three { bottom: 18%; left: 20%; }
+.dot-four { bottom: 15%; right: 27%; }
+
+.brand-chip {
   backdrop-filter: blur(10px);
   background: rgba(255, 254, 251, 0.76);
   border: 1px solid rgba(25, 95, 74, 0.18);
-  border-radius: 16px;
+  border-radius: 999px;
   box-shadow: 0 12px 32px rgba(21, 35, 31, 0.08);
-  display: flex;
-  gap: 10px;
-  padding: 12px 15px;
-}
-
-.system-node b,
-.system-node small {
-  display: block;
-}
-
-.system-node b {
-  font-size: 13px;
-}
-
-.system-node small {
-  color: var(--muted);
-  font-size: 10px;
-  letter-spacing: 0.08em;
-  margin-top: 2px;
-  text-transform: uppercase;
-}
-
-.node-icon {
-  align-items: center;
-  background: rgba(182, 231, 200, 0.45);
-  border-radius: 10px;
   color: var(--green);
-  display: flex;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 800;
-  height: 32px;
-  justify-content: center;
-  width: 32px;
+  letter-spacing: 0.12em;
+  padding: 10px 16px;
 }
 
-.node-code { left: 6%; top: 16%; }
-.node-tools { right: 0; top: 24%; }
-.node-gate { bottom: 19%; left: 2%; }
-.node-work { bottom: 12%; right: 8%; }
+.chip-one { left: 2%; top: 32%; }
+.chip-two { right: 2%; top: 19%; }
+.chip-three { bottom: 22%; left: 4%; }
+.chip-four { bottom: 11%; right: 7%; }
 
 .hero-bottom {
   align-items: center;
@@ -504,102 +490,6 @@ h2 {
 
 .section-head h2 {
   margin-bottom: 18px;
-}
-
-.architecture {
-  padding-bottom: 140px;
-  padding-top: 140px;
-}
-
-.architecture-stack {
-  margin: 0 auto;
-  max-width: 1080px;
-}
-
-.arch-layer {
-  align-items: center;
-  border: 1px solid var(--line);
-  border-radius: 18px;
-  display: flex;
-  justify-content: space-between;
-  padding: 24px 30px;
-}
-
-.arch-clients {
-  background: rgba(255, 254, 251, 0.56);
-}
-
-.arch-gateway {
-  background: var(--green);
-  border-color: var(--green);
-  color: var(--white);
-}
-
-.arch-foundation {
-  background: var(--paper-deep);
-}
-
-.arch-meta span,
-.arch-meta strong {
-  display: block;
-}
-
-.arch-meta span {
-  color: var(--muted);
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 0.14em;
-  margin-bottom: 7px;
-}
-
-.arch-gateway .arch-meta span {
-  color: var(--mint);
-}
-
-.arch-meta strong {
-  font-size: 20px;
-}
-
-.arch-items {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: flex-end;
-}
-
-.arch-items > * {
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  font-size: 12px;
-  font-weight: 700;
-  padding: 9px 14px;
-}
-
-.arch-items a:hover {
-  border-color: var(--green);
-  color: var(--green);
-}
-
-.arch-items small {
-  color: var(--muted);
-  font-size: 9px;
-  margin-left: 4px;
-  text-transform: uppercase;
-}
-
-.arch-gateway .arch-items span {
-  border-color: rgba(255, 255, 255, 0.25);
-}
-
-.arch-connector {
-  display: flex;
-  gap: 19%;
-  height: 42px;
-  justify-content: center;
-}
-
-.arch-connector span {
-  border-left: 1px dashed rgba(25, 95, 74, 0.3);
 }
 
 .products {
@@ -1282,17 +1172,13 @@ h2 {
   .orbit-two { height: 300px; width: 300px; }
   .system-core { height: 136px; width: 136px; }
   .system-core strong { font-size: 17px; }
-  .system-node { gap: 7px; padding: 8px 9px; }
-  .node-icon { height: 27px; width: 27px; }
-  .system-node b { font-size: 11px; }
-  .system-node small { font-size: 8px; }
-  .node-code { left: 0; top: 15%; }
-  .node-tools { right: 0; top: 18%; }
-  .node-gate { bottom: 12%; left: 0; }
-  .node-work { bottom: 6%; right: 0; }
+  .brand-chip { font-size: 11px; padding: 8px 12px; }
+  .chip-one { left: 0; top: 28%; }
+  .chip-two { right: 0; top: 16%; }
+  .chip-three { bottom: 19%; left: 0; }
+  .chip-four { bottom: 8%; right: 0; }
 
   .statement,
-  .architecture,
   .capabilities,
   .contact {
     padding-bottom: 96px;
@@ -1301,17 +1187,6 @@ h2 {
 
   .statement-layout {
     gap: 18px;
-  }
-
-  .arch-layer {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 18px;
-    padding: 20px;
-  }
-
-  .arch-items {
-    justify-content: flex-start;
   }
 
   .products {
