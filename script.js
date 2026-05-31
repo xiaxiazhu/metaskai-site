@@ -86,17 +86,49 @@ tabs.forEach((tab) => {
 
 const toggle = document.querySelector(".menu-toggle");
 const nav = document.querySelector(".site-nav");
+const dropdownItems = document.querySelectorAll(".nav-item-dropdown");
+
+function closeDropdowns(except) {
+  dropdownItems.forEach((item) => {
+    if (item !== except) {
+      item.classList.remove("open");
+      item.querySelector(".nav-dropdown-toggle").setAttribute("aria-expanded", "false");
+    }
+  });
+}
 
 toggle.addEventListener("click", () => {
   const open = nav.classList.toggle("open");
   toggle.setAttribute("aria-expanded", String(open));
+  if (!open) {
+    closeDropdowns();
+  }
 });
 
 nav.querySelectorAll("a").forEach((link) => {
   link.addEventListener("click", () => {
     nav.classList.remove("open");
     toggle.setAttribute("aria-expanded", "false");
+    closeDropdowns();
   });
+});
+
+dropdownItems.forEach((item) => {
+  const dropdownToggle = item.querySelector(".nav-dropdown-toggle");
+  dropdownToggle.addEventListener("click", () => {
+    const open = !item.classList.contains("open");
+    closeDropdowns(item);
+    item.classList.toggle("open", open);
+    dropdownToggle.setAttribute("aria-expanded", String(open));
+  });
+});
+
+document.addEventListener("click", (event) => {
+  if (!nav.contains(event.target) && !toggle.contains(event.target)) {
+    nav.classList.remove("open");
+    toggle.setAttribute("aria-expanded", "false");
+    closeDropdowns();
+  }
 });
 
 const observer = new IntersectionObserver(
