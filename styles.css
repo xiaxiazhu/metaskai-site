@@ -1164,6 +1164,219 @@ h2 {
   padding-top: 20px;
 }
 
+.about-hero {
+  align-items: end;
+  display: grid;
+  gap: 44px;
+  grid-template-columns: minmax(0, 1fr) auto;
+  min-height: 610px;
+  padding-bottom: 110px;
+  padding-top: 140px;
+  position: relative;
+}
+
+.about-hero-glow {
+  background: radial-gradient(circle, rgba(124, 231, 255, 0.42), rgba(124, 231, 255, 0) 68%);
+  border-radius: 50%;
+  height: 520px;
+  pointer-events: none;
+  position: absolute;
+  right: -160px;
+  top: 10px;
+  width: 520px;
+}
+
+.about-hero h1 {
+  max-width: 900px;
+}
+
+.about-hero-note {
+  border-left: 1px solid var(--line);
+  padding: 8px 0 8px 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.about-hero-note span {
+  color: var(--green);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.about-hero-note p {
+  color: var(--ink);
+  font-family: Georgia, serif;
+  font-size: 22px;
+  font-style: italic;
+  margin: 7px 0 0;
+}
+
+.purpose {
+  border-bottom: 1px solid var(--line);
+  border-top: 1px solid var(--line);
+  padding-bottom: 120px;
+  padding-top: 110px;
+}
+
+.purpose-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.purpose-card {
+  background: var(--paper-deep);
+  border-radius: 22px;
+  min-height: 410px;
+  padding: 34px;
+}
+
+.purpose-card-dark {
+  background: var(--green-deep);
+  color: var(--white);
+}
+
+.purpose-card > p,
+.leader-role {
+  color: var(--green);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.purpose-card-dark > p,
+.purpose-card-dark h2 em {
+  color: var(--mint);
+}
+
+.purpose-card h2 {
+  font-size: clamp(38px, 3.7vw, 57px);
+  margin: 75px 0 22px;
+}
+
+.purpose-card > span {
+  color: var(--ink-soft);
+  display: block;
+  font-size: 15px;
+  line-height: 1.85;
+  max-width: 560px;
+}
+
+.purpose-card-dark > span {
+  color: rgba(255, 255, 255, 0.66);
+}
+
+.beliefs {
+  padding-bottom: 135px;
+  padding-top: 135px;
+}
+
+.belief-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.belief-card {
+  border-top: 1px solid var(--line);
+  padding: 22px 5px 0;
+}
+
+.belief-card span {
+  color: var(--green);
+  display: block;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  margin-bottom: 52px;
+}
+
+.belief-card h3 {
+  font-size: 21px;
+  letter-spacing: -0.04em;
+  margin-bottom: 12px;
+}
+
+.belief-card p {
+  color: var(--ink-soft);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.leader {
+  background: var(--paper-deep);
+  border-radius: 28px;
+  margin-bottom: 20px;
+  padding: 70px;
+}
+
+.leader-layout {
+  align-items: center;
+  display: grid;
+  gap: 50px;
+  grid-template-columns: minmax(0, 0.9fr) minmax(460px, 1.1fr);
+}
+
+.leader-layout .section-head {
+  margin-bottom: 0;
+}
+
+.leader-card {
+  align-items: center;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  display: grid;
+  gap: 25px;
+  grid-template-columns: 120px 1fr;
+  padding: 28px;
+}
+
+.leader-avatar {
+  background: var(--green-deep);
+  border-radius: 18px;
+  height: 142px;
+  object-fit: cover;
+  object-position: center 18%;
+  width: 120px;
+}
+
+.leader-card h3 {
+  font-size: 29px;
+  letter-spacing: -0.05em;
+  margin-bottom: 10px;
+}
+
+.leader-card h3 small {
+  color: var(--muted);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  margin-left: 7px;
+}
+
+.leader-card p {
+  color: var(--ink-soft);
+  font-size: 14px;
+  line-height: 1.75;
+  margin-bottom: 9px;
+}
+
+.leader-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 14px;
+}
+
+.leader-tags span {
+  background: var(--paper-deep);
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 11px;
+  padding: 6px 9px;
+}
+
 .reveal {
   opacity: 0;
   transform: translateY(18px);
@@ -1300,6 +1513,21 @@ h2 {
     grid-template-columns: 1fr;
   }
 
+  .about-hero {
+    display: block;
+    min-height: auto;
+    padding-bottom: 94px;
+    padding-top: 120px;
+  }
+
+  .about-hero-note {
+    margin-top: 42px;
+  }
+
+  .leader-layout {
+    grid-template-columns: 1fr;
+  }
+
   .product-layout {
     grid-template-columns: 1fr;
   }
@@ -1384,8 +1612,41 @@ h2 {
 
   .capability-grid,
   .service-grid,
-  .about-layout {
+  .about-layout,
+  .purpose-grid,
+  .belief-grid {
     grid-template-columns: 1fr;
+  }
+
+  .purpose,
+  .beliefs {
+    padding-bottom: 96px;
+    padding-top: 96px;
+  }
+
+  .purpose-card {
+    min-height: 330px;
+    padding: 25px;
+  }
+
+  .purpose-card h2 {
+    margin-top: 54px;
+  }
+
+  .leader {
+    border-radius: 20px;
+    margin-bottom: 0;
+    padding: 36px 22px;
+  }
+
+  .leader-card {
+    grid-template-columns: 1fr;
+    padding: 18px;
+  }
+
+  .leader-avatar {
+    height: 220px;
+    width: 100%;
   }
 
   .capability-card {

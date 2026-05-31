@@ -49,6 +49,9 @@ const detail = document.querySelector("#product-detail");
 const tabs = document.querySelectorAll(".product-tab");
 
 function renderProduct(key) {
+  if (!detail) {
+    return;
+  }
   const product = products[key];
   detail.innerHTML = `
     <div class="product-detail-top">
