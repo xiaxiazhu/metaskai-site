@@ -29,7 +29,7 @@ const products = {
     description:
       "企业 AI 的统一控制入口。集中管理模型、Token、权限和调用记录，为 AI 应用提供可靠、安全的运行基础。",
     features: ["多模型统一管理", "Token 与成本控制", "审计与治理"],
-    href: "http://napi.origintask.cn/",
+    href: "https://napi.origintask.cn/",
     linkLabel: "访问 Meta Gate"
   },
   work: {
