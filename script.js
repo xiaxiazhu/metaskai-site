@@ -7,7 +7,7 @@ const products = {
     description:
       "面向企业研发团队的 AI 编程助手。连接企业知识、统一模型和身份权限，让 AI 参与真实的软件交付流程。",
     features: ["企业知识库接入", "统一 Token 池与权限", "研发场景提效"],
-    href: "https://metacode.origintask.cn/",
+    href: "https://metacode.metask-ai.com/",
     linkLabel: "访问产品站"
   },
   tools: {
@@ -29,7 +29,7 @@ const products = {
     description:
       "企业 AI 的统一控制入口。集中管理模型、Token、权限和调用记录，为 AI 应用提供可靠、安全的运行基础。",
     features: ["多模型统一管理", "Token 与成本控制", "审计与治理"],
-    href: "http://napi.origintask.cn/",
+    href: "https://napi.metask-ai.com/",
     linkLabel: "访问 Meta Gate"
   },
   work: {
