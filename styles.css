@@ -1158,10 +1158,16 @@ h2 {
   border-top: 1px solid var(--line);
   color: var(--muted);
   display: flex;
+  flex-wrap: wrap;
   font-size: 11px;
+  gap: 8px 20px;
   grid-column: 1 / -1;
   justify-content: space-between;
   padding-top: 20px;
+}
+
+.footer-bottom a:hover {
+  color: var(--green);
 }
 
 .about-hero {
@@ -1729,5 +1735,10 @@ h2 {
   .footer-links {
     gap: 18px;
     grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 8px;
   }
 }

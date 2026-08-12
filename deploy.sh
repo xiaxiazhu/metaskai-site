@@ -6,7 +6,7 @@ set -euo pipefail
 #   ./deploy.sh
 #   ./deploy.sh ubuntu@119.45.6.42 /var/www/html
 
-REMOTE_HOST="${1:-ubuntu@119.45.6.42}"
+REMOTE_HOST="${1:-ubuntu@111.231.4.97}"
 REMOTE_DIR="${2:-/var/www/metaskai-site}"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
@@ -25,6 +25,7 @@ ssh "${REMOTE_HOST}" "mkdir -p '${REMOTE_DIR}'"
 rsync -avz --delete \
   --exclude '.git/' \
   --exclude '.DS_Store' \
+  --exclude '._*' \
   "${FILES[@]/#/${SCRIPT_DIR}/}" \
   "${REMOTE_HOST}:${REMOTE_DIR}/"
 
